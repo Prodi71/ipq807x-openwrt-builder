@@ -64,8 +64,10 @@ jobs:
           #echo "CONFIG_PACKAGE_kmod-qca-nss-drv-pppoe=y\n" >> .config
           #echo "CONFIG_PACKAGE_kmod-qca-nss-ecm=y\n" >> .config
           #echo "CONFIG_PACKAGE_kmod-qca-nss-drv-bridge-mgr=y\n" >> .config
+          echo "CONFIG_PACKAGE_luci-compat=y\n" >> .config
           echo "CONFIG_PACKAGE_luci-app-openvpn=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-wireguard=y" >> .config
+          echo "CONFIG_PACKAGE_luci-app-adblock=y\n" >> .config
           echo "CONFIG_PACKAGE_luci-app-shadowsocks-libev=y" >> .config
           echo "CONFIG_PACKAGE_shadowsocks-libev-ss-local=y" >> .config
           echo "CONFIG_PACKAGE_shadowsocks-libev-ss-redir=y" >> .config
@@ -74,7 +76,10 @@ jobs:
           echo "CONFIG_PACKAGE_luci-app-ddns=y" >> .config
           echo "CONFIG_PACKAGE_openvpn-openssl=y" >> .config
           echo "CONFIG_PACKAGE_wireguard=y" >> .config
-          echo "CONFIG_PACKAGE_qrencode=y" >> .config
+          echo "CONFIG_PACKAGE_kmod-wireguard=y\n" >> .config
+          echo "CONFIG_PACKAGE_kmod-tun=y\n" >> .config
+          # echo "CONFIG_PACKAGE_qrencode=y" >> .config
+          echo "CONFIG_PACKAGE_irqbalance=y\n" >> .config
           echo "CONFIG_PACKAGE_wpad-basic-wolfssl=m\n" >> .config
           echo "CONFIG_PACKAGE_wpad-wolfssl=y\n" >> .config
           make defconfig
