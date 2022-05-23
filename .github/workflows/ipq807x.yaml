@@ -64,6 +64,10 @@ jobs:
           echo "CONFIG_PACKAGE_luci-app-openvpn=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-wireguard=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-shadowsocks-libev=y" >> .config
+          echo "CONFIG_PACKAGE_shadowsocks-libev-ss-local=y" >> .config
+          echo "CONFIG_PACKAGE_shadowsocks-libev-ss-redir=y" >> .config
+          echo "CONFIG_PACKAGE_shadowsocks-libev-ss-rules=y" >> .config
+          echo "CONFIG_PACKAGE_shadowsocks-libev-ss-tunnel=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-ddns=y" >> .config
           echo "CONFIG_PACKAGE_openvpn-openssl=y" >> .config
           echo "CONFIG_PACKAGE_wireguard=y" >> .config
