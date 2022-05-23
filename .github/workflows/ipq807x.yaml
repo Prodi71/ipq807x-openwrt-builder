@@ -1,4 +1,4 @@
-name: ipq807x-5.15 - Build remote repo only if new commits were pushed
+name: ipq807x-5.15-pr - Build remote repo only if new commits were pushed
 on:
   workflow_dispatch:
   push:
@@ -14,7 +14,7 @@ jobs:
           curl -sL "https://api.github.com/repos/$REMOTE_REPOSITORY/commits?sha=$REMOTE_BRANCH&per_page=1" | jq -r '[.[]][0]' > commit.json
         env:
           REMOTE_REPOSITORY: robimarko/openwrt
-          REMOTE_BRANCH: ipq807x-5.15
+          REMOTE_BRANCH: ipq807x-5.15-pr
       - name: Calculate hours since last commit
         id: calc
         run: |
@@ -63,6 +63,7 @@ jobs:
           #echo "CONFIG_PACKAGE_kmod-qca-nss-drv-bridge-mgr=y\n" >> .config
           echo "CONFIG_PACKAGE_luci-app-openvpn=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-wireguard=y" >> .config
+          echo "CONFIG_PACKAGE_luci-app-shadowsocks-libev=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-ddns=y" >> .config
           echo "CONFIG_PACKAGE_openvpn-openssl=y" >> .config
           echo "CONFIG_PACKAGE_wireguard=y" >> .config
