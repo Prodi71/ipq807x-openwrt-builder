@@ -1,4 +1,4 @@
-name: ipq807x-5.15-pr - Build remote repo only if new commits were pushed
+name: ipq807x-5.15 - Build remote repo only if new commits were pushed
 on:
   workflow_dispatch:
   push:
@@ -51,7 +51,7 @@ jobs:
           echo "CONFIG_TARGET_ipq807x=y" > .config
           echo "CONFIG_TARGET_ipq807x_generic=y\n" >> .config
           echo 'CONFIG_TARGET_ipq807x_generic_DEVICE_xiaomi_ax3600=y' >> .config
-          # echo 'CONFIG_HAS_SUBTARGETS=y' >> .config
+          echo 'CONFIG_HAS_SUBTARGETS=y' >> .config
           echo 'CONFIG_TARGET_SUBTARGET="generic"' >> .config
           echo 'CONFIG_TARGET_BOARD="ipq807x"' >> .config
           echo 'CONFIG_TARGET_PROFILE="DEVICE_xiaomi_ax3600"' >> .config
@@ -135,4 +135,3 @@ jobs:
           title: 'Updated prebuilt images (${{ env.BUILDINFO }})'
           automatic_release_tag: ipq807x-5.15-latest
           files: bin/targets/ipq807x/generic/*
-     
